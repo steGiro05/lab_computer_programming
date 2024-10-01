@@ -1,8 +1,8 @@
 {
     "files.associations": {
-        "iostream": "cpp",
-        "cmath": "cpp",
-        "*.tcc": "cpp",
-        "ostream": "cpp"
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp",
+        "iostream": "cpp"
     }
 }
