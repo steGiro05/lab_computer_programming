@@ -1,0 +1,36 @@
+Max: 15
+ 
+Sum: 11
+ 
+Product: 48
+ 
+Average value: 20
+ 
+Max: -1
+ 
+Sum: 25
+ 
+Product: 48
+ 
+Average value: -10
+ 
+Max: 4.1
+ 
+Sum: 6.6
+ 
+Product: 7.986
+ 
+Average value: 3.83333
+ 
+Max: 5
+ 
+Sum: 5
+ 
+Product: 5
+ 
+Average value: 5
+ 
+ 
+ 
+Sum:  
+ 

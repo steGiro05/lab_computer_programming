@@ -1,0 +1,2 @@
+Command --median doesn't existNo argumentstod Input error
+No argument
