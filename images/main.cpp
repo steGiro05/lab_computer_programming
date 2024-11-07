@@ -22,9 +22,7 @@ void gray();
 
 int main(int argc, char const *argv[])
 {
-    read_image(argv[1]);
-    gray();    
-    output_image(argv[2]);
+    cout << argv[1];
     
     return 0;
 }

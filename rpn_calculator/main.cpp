@@ -1,92 +1,124 @@
 using namespace std;
 #include <iostream>
+#include "stack.h"
 
-struct node{
-    double data;
-    node * next;
-};
-
-//list functions
-int length (node * start);
-node * insert_first(node * start,double val);//returns the new starting point
-node * remove_first(node * start);//returns the new starting point
-void print(node * start);
-void deallocate_list(node *start);
+void sum(node**stack);
+void diff(node**stack);
+void mul(node**stack);
+void div(node**stack);
+void swap(node**stack);
 
 int main(int argc, char const *argv[])
 {
     node *stack= NULL;
+
     string user_input;
     do
     {
+        cout<<"Command: ";
         cin>>user_input;
-        if (user_input=="q");
+        if (user_input=="q"){
+            cout<<"Terminating execution..";
+        }
 
         else if (user_input=="p"){
-
+            print(stack);
+        }
+        else if (user_input=="s"){
+            swap(&stack);
+        }
+        else if (user_input=="+"){
+            sum(&stack);
+        }
+        else if (user_input=="-"){
+            diff(&stack);
+        }
+        else if (user_input=="*"){
+            mul(&stack);
+        }
+        else if (user_input=="/"){
+            div(&stack);
         }
         else {
             try
             {
                 double number=stod(user_input);
-                if(stack==NULL){
-                    stack= new node;
-                    stack->data=number;
-                }
-                else insert_first(stack,number);
+                push(&stack,number);
             }
             catch(const std::exception& e)
             {
-                std::cerr << e.what() << '\n';
+                std::cerr <<"Exception: "<< e.what() << '\n';
             }
         }
         
-    } while (user_input!="q");
+    } while (user_input!="q"); 
     
     deallocate_list(stack);
     return 0;
 }
 
-void print(node * start){
-    if(start==NULL) cout<<"Stack is empty";
-    else{
-        do
-        {
-            cout << start->data<<endl;
-            start=start->next;
-        }
-        while (start->next!=NULL);
+void sum(node**stack){
+    try
+    {
+        double n1=pop(stack);
+        double n2=pop(stack);
+        push(stack, n2+n1);
+     }
+    catch(const std::exception& e)
+    {
+        std::cerr <<"Exception: "<< e.what() << '\n';
     }
-    
 }
 
-int length (node * start) {
- int len = 0;
- for( ; start != NULL; start = start->next) len++;
- return len;
+void diff(node**stack){
+    try
+    {
+        double n1=pop(stack);
+        double n2=pop(stack);
+        push(stack, n2-n1);
+     }
+    catch(const std::exception& e)
+    {
+        std::cerr <<"Exception: "<< e.what() << '\n';
+    }
 }
 
-node * insert_first(node * start, double val) {
- node * new_node = new node;
- new_node->data = val;
- new_node->next = start;
- return new_node;
+void swap(node ** stack){
+    try
+    {
+        double n1=pop(stack);
+        double n2=pop(stack);
+        push(stack,n1);
+        push(stack,n2);
+     }
+    catch(const std::exception& e)
+    {
+        std::cerr <<"Exception: "<< e.what() << '\n';
+    }
 }
 
-node * remove_first(node * start) {
- node * n = start;
- if (start != NULL) {
- start = start->next;
- delete n;
- }
- return start;
+void mul(node**stack){
+    try
+    {
+        double n1=pop(stack);
+        double n2=pop(stack);
+        push(stack, n2*n1);
+     }
+    catch(const std::exception& e)
+    {
+        std::cerr <<"Exception: "<< e.what() << '\n';
+    }
 }
-
-void deallocate_list(node *start) {
-    node *temp;
-    while (start != NULL) {
-        temp = start;
-        start = start->next;
-        delete temp;  // Free the memory of the current node
+void div(node**stack){
+    try
+    {
+        double n1=pop(stack);
+        double n2=pop(stack);
+        if(n1==0)__throw_runtime_error("Division by 0");
+        push(stack, n2/n1);
+     }
+    catch(const std::exception& e)
+    {
+        std::cerr <<"Exception: "<< e.what() << '\n';
     }
 }

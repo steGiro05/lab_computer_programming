@@ -1,9 +1,13 @@
 {
-    "files.associations": {
-        "ostream": "cpp",
-        "iostream": "cpp",
-        "stdexcept": "cpp",
-        "optional": "cpp",
-        "iosfwd": "cpp"
-    }
+  "files.associations": {
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "stdexcept": "cpp",
+    "optional": "cpp",
+    "iosfwd": "cpp",
+    "array": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "new": "cpp"
+  }
 }
