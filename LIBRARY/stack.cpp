@@ -36,10 +36,11 @@ double pop(node ** start) {
 }
 
 void deallocate_list(node *start) {
-    node *temp;
-    while (start != NULL) {
-        temp = start;
-        start = start->next;
-        delete temp;  // Free the memory of the current node
+    while (start != nullptr) {
+        node *temp = start;  // Conserva il nodo corrente
+        start = start->next; // Sposta il puntatore al nodo successivo
+        delete temp;         // Libera la memoria del nodo corrente
     }
 }
+
+
