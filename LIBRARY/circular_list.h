@@ -1,10 +1,13 @@
-#ifndef LINKED_LIST_H
-#define LINKED_LIST_H
+#ifndef CIRCULAR_LIST_H
+#define CIRCULAR_LIST_H
 #include "node.h"
 
-namespace linked_list_ns
+namespace circular_list_ns
 {
-
+    void insert(node ** start,double value);
+    void remove_neighbour(node ** n);
+    void print (node * start);
+    void deallocate_list(node *start);
 } // namespace stack_ns
 
 //list functions
