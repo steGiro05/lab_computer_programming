@@ -5,8 +5,8 @@
 namespace stack_ns
 {
     
-void push(node ** start,double val);
-double pop(node ** start);//returns the data
+void push(node ** start,double val); //side effect on start node
+double pop(node ** start);//side effect on start node
 void print(node * start);
 void deallocate_list(node *start);
 } // namespace stack_ns

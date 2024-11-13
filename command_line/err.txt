@@ -1,2 +1,11 @@
-Command --median doesn't existNo argumentstod Input error
-No argument
+The sum of two vector is defined in this way:
+v_1(a_1,b_1,c_1) v_2(a_2,b_2,c_2)
+v_1+v_2=(a_1+a_2,...)
+
+AB=I
+
+given sqare matrixx with dim m: A.
+exists B s.t. BA=AB=i_m
+
+(AB)'=B'A'
+ABB'A'

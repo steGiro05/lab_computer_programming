@@ -4,8 +4,8 @@
 
 namespace queue_ns
 {
-    void insert(node ** start,double val);
-    double read(node ** start);//returns the data
+    void enqueue(node ** start,double val);//side effect on start node iff equal to nullptr
+    double dequeue(node ** start);//side effect on start node
     void print(node * start);
     void deallocate_list(node *start);
     
