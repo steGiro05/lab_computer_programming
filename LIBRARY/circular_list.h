@@ -7,6 +7,7 @@ namespace circular_list_ns
     void insert(node ** start,double value);
     void remove_neighbour(node ** n);
     void print (node * start);
+    int length(node * start);
     void deallocate_list(node *start);
 } // namespace stack_ns
 
