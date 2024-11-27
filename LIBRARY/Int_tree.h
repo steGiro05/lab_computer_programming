@@ -20,9 +20,15 @@ public:
 
     void insert(int data);
     std::string to_string()const;
+    std::string get_path(int data);
+    void deallocate();
 private:
+    //methods
     void insert_recursive(int data, Tree_node * iterator);
     std::string to_string_recursive(Tree_node * iterator)const;
+    std::string get_path_recursive(Tree_node * iterator,int data);
+    void deallocate_recursive(Tree_node * iterator);
+    //attributes
     Tree_node * start;
 };
 

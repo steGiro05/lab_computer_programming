@@ -38,3 +38,36 @@ std::string Int_tree::to_string_recursive(Tree_node * iterator)const{
     return to_string_recursive(iterator->left_child)+std::to_string(iterator->data)+" "+to_string_recursive(iterator->right_child);
     
 }
+
+void Int_tree::deallocate(){
+    if (start== nullptr) return;
+    deallocate_recursive(start);
+    start = nullptr;
+}
+
+void Int_tree::deallocate_recursive(Tree_node * iterator){
+    if(iterator == nullptr)return;
+    deallocate_recursive(iterator->left_child);
+    deallocate_recursive(iterator->right_child);
+    delete iterator;
+}
+
+string Int_tree::get_path(int data){
+    if (start==nullptr)
+    {
+        return "Empty three";
+    }
+    return get_path_recursive(start, data);
+    
+}
+
+string Int_tree::get_path_recursive(Tree_node * iterator, int data){
+    if(iterator==nullptr){
+        __throw_runtime_error("Value not found");
+    };
+    if(iterator->data==data)return "";
+    if(data<=iterator->data)return std::to_string(iterator->data)+" left "+get_path_recursive(iterator->left_child,data);
+    else return std::to_string(iterator->data)+" right "+get_path_recursive(iterator->right_child,data);
+}   
+
+
