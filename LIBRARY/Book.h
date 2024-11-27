@@ -4,7 +4,7 @@
 
 class Book {
 public:
-    Book(std::string title,std::string author);
+    Book(string title, string author):title{title},author{author}{};
     std::string to_string() const {return "Title: "+title+", Author: "+author;}
     std::string get_title() const {return title;}
     std::string get_author() const {return author;}

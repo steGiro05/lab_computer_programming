@@ -8,14 +8,10 @@ class List;
 template <typename T>
 class Node {
 friend class List<T>;
-public:
-    Node(T data, Node<T>* next = nullptr) : data(data), next(next) {}
 private:
+    Node(T data, Node<T>* next = nullptr) : data(data), next(next) {}
     T data;
     Node<T> * next;
-    void set_next(Node<T> * n) const {
-        next=n;
-    } ;
 };
 
 template <typename T>
